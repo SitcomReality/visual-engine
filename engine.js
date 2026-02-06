@@ -16,11 +16,11 @@ export class Engine {
       throw new Error('WebGL not supported');
     }
     
-    this.resize();
-    window.addEventListener('resize', () => this.resize());
-    
     this.quality = new QualityController();
     this.particles = new ParticleSystem(this.gl, this.quality);
+
+    this.resize();
+    window.addEventListener('resize', () => this.resize());
     this.pointer = { x: 0.5, y: 0.5, down: false };
     
     this.setupShaders();
