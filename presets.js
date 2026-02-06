@@ -21,11 +21,11 @@ export const presets = [
     name: 'Neural',
     background: [0.01, 0.02, 0.04],
     palette: [
-      [0.1, 0.6, 1.0],  // Cyan
-      [0.3, 0.9, 1.0]   // Bright cyan
+      [0.02, 0.01, 1.0],  // Cyan
+      [2, 0.9, 1.0]   // Bright cyan
     ],
     particleCount: 500,
-    particleSize: 0.02,
+    particleSize: 0.1,
     particleLife: 20.0,
     emitterType: 'spread',
     velocityType: 'drift',
