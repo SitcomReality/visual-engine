@@ -1,73 +1,64 @@
 export const presets = [
   {
-    name: 'Embers',
-    background: [0.02, 0.01, 0.03],
-    palette: [
-      [1.0, 0.3, 0.1],  // Orange
-      [1.0, 0.8, 0.2]   // Yellow
-    ],
-    particleCount: 3000,
+    name: 'Firestorm',
+    background: [0.05, 0.01, 0.0],
+    palette: [[1.0, 0.2, 0.0], [1.0, 0.7, 0.1]],
+    particleCount: 2000,
+    particleSize: 0.04,
+    particleLife: 4.0,
+    emitterType: 'bottom',
+    velocityType: 'upward',
+    fieldType: 'curl',
+    fieldStrength: 1.5,
+    damping: 0.1,
+    boundsType: 'wrap',
+    showLines: false
+  },
+  {
+    name: 'Synapse',
+    background: [0.0, 0.02, 0.05],
+    palette: [[0.0, 0.8, 1.0], [0.5, 1.0, 1.0]],
+    particleCount: 200,
+    particleSize: 0.025,
+    particleLife: 15.0,
+    emitterType: 'spread',
+    velocityType: 'drift',
+    fieldType: 'attractor',
+    fieldStrength: 0.4,
+    damping: 0.5,
+    boundsType: 'bounce',
+    showLines: true,
+    lineDist: 0.3
+  },
+  {
+    name: 'Nebula',
+    background: [0.02, 0.0, 0.03],
+    palette: [[0.8, 0.2, 1.0], [0.2, 0.5, 1.0]],
+    particleCount: 4000,
     particleSize: 0.015,
-    particleLife: 8.0,
+    particleLife: 10.0,
     emitterType: 'spread',
     velocityType: 'drift',
     fieldType: 'curl',
-    fieldStrength: 0.5,
-    damping: 0.2,
-    boundsType: 'wrap'
+    fieldStrength: 0.8,
+    damping: 0.3,
+    boundsType: 'wrap',
+    showLines: false
   },
-  
   {
-    name: 'Neural',
-    background: [0.01, 0.02, 0.04],
-    palette: [
-      [0.02, 0.01, 1.0],  // Cyan
-      [2, 0.9, 1.0]   // Bright cyan
-    ],
-    particleCount: 500,
-    particleSize: 0.1,
-    particleLife: 20.0,
-    emitterType: 'spread',
-    velocityType: 'drift',
-    fieldType: 'none',
-    fieldStrength: 0.0,
-    damping: 0.8,
-    boundsType: 'bounce'
-  },
-  
-  {
-    name: 'Cosmic',
-    background: [0.01, 0.01, 0.02],
-    palette: [
-      [0.6, 0.4, 1.0],  // Purple
-      [0.3, 0.8, 1.0]   // Blue
-    ],
-    particleCount: 5000,
-    particleSize: 0.008,
-    particleLife: 15.0,
-    emitterType: 'spread',
-    velocityType: 'slow',
-    fieldType: 'none',
-    fieldStrength: 0.0,
-    damping: 0.95,
-    boundsType: 'wrap'
-  },
-  
-  {
-    name: 'Vortex',
-    background: [0.02, 0.01, 0.02],
-    palette: [
-      [1.0, 0.2, 0.5],  // Pink
-      [0.5, 0.2, 1.0]   // Purple
-    ],
-    particleCount: 4000,
-    particleSize: 0.012,
-    particleLife: 6.0,
+    name: 'Hyperdrive',
+    background: [0.0, 0.0, 0.0],
+    palette: [[1.0, 1.0, 1.0], [0.5, 0.7, 1.0]],
+    particleCount: 1500,
+    particleSize: 0.03,
+    particleLife: 2.0,
     emitterType: 'center',
     velocityType: 'outward',
     fieldType: 'vortex',
-    fieldStrength: 2.0,
-    damping: 0.3,
-    boundsType: 'wrap'
+    fieldStrength: 4.0,
+    damping: 0.0,
+    boundsType: 'kill',
+    showLines: true,
+    lineDist: 0.15
   }
 ];

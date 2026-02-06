@@ -55,7 +55,7 @@ void main() {
   pos.x /= u_aspect;
   
   gl_Position = vec4(pos, 0.0, 1.0);
-  gl_PointSize = finalSize * 100.0;
+  gl_PointSize = finalSize * 300.0;
   
   v_life = alpha;
   v_z = z;
@@ -79,17 +79,17 @@ void main() {
   
   if (dist > 1.0) discard;
   
-  // Soft glow
-  float glow = 1.0 - smoothstep(0.0, 1.0, dist);
-  glow = pow(glow, 2.0);
+  // Hot core with soft falloff
+  float glow = exp(-dist * 4.0);
+  float core = exp(-dist * 15.0) * 2.0;
   
   // Color from palette
   vec3 color = mix(u_paletteStart, u_paletteEnd, v_hue);
   
   // Depth dimming
-  float depthFade = 1.0 - v_z * 0.3;
+  float depthFade = 1.0 - v_z * 0.5;
   
-  float alpha = glow * v_life * depthFade;
+  float alpha = (glow + core) * v_life * depthFade;
   
   gl_FragColor = vec4(color, 1.0) * alpha;
 }
@@ -108,10 +108,11 @@ void main() {
 
 export const lineFS = `
 precision mediump float;
-uniform vec4 u_color;
+uniform vec3 u_color;
+uniform float u_opacity;
 
 void main() {
-  gl_FragColor = u_color;
+  gl_FragColor = vec4(u_color, u_opacity);
 }
 `;
 
